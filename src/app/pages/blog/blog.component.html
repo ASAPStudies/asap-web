@@ -1,0 +1,43 @@
+<div class="mx-6 md:mx-44">
+  <section class="lg:py-16 py-6 relative">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 items-center gap-4">
+        <div class="mb-10">
+          <p class="text-4xl/snug text-carbon md:text-6xl/snug font-semibold mb-4">Blogs</p>
+
+          <p class="text-[20px] mx-2 text-carbon md:text-justify">
+            <span class="font-semibold text-carbon"
+              >Nation’s First Religious Charter School Could Be Coming to
+              Oklahoma <br /><br
+            /></span>
+            If approved, the online Catholic school would be funded by taxpayer
+            dollars, teeing up a high-profile constitutional battle.
+            <a href="#" class="post-read-more"><i>Read More</i></a>
+          </p>
+          <p class="post-meta p-4 mx-2 text-sm text-gray-500">
+            Admin
+          </p>
+        </div>
+        <div class="relative">
+          <img
+            src="/blog-img4.png"
+            class="w-full rounded-lg"
+            alt=""
+          />
+        </div>
+      </div>
+      <!-- end grid -->
+    </div>
+    <!-- end container -->
+  </section>
+
+  <div class="container p-3">
+    <div class="grid grid-cols-2 gap-4 md:grid-cols-6">
+      @for(post of posts; track post) {
+      <app-post-card
+        [postImageUrl]="'/post' + post + '.png'"
+      ></app-post-card>
+      }
+    </div>
+  </div>
+</div>

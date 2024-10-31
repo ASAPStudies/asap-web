@@ -1,0 +1,123 @@
+<!-- Main navigation container -->
+<nav
+  class="relative flex w-full flex-wrap items-center justify-between bg-white shadow-xl py-2 shadow-dark-mild lg:py-4"
+  data-twe-navbar-ref
+>
+  <div class="flex w-full flex-wrap items-center justify-between px-3">
+    <div class="w-48">
+      <a class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0" [routerLink]="['/']">
+        <img
+          class="me-2"
+          src="/logo.png"
+          loading="lazy"
+        />
+      </a>
+    </div>
+
+    <!-- Hamburger button for mobile view -->
+    <button
+      class="block border-0 bg-transparent px-2 text-black/50 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
+      type="button"
+      data-twe-collapse-init
+      data-twe-target="#navbarSupportedContent4"
+      aria-controls="navbarSupportedContent4"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <!-- Hamburger icon -->
+      <span
+        class="[&>svg]:w-7 [&>svg]:stroke-black/50 dark:[&>svg]:stroke-neutral-200"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </button>
+
+    <!-- Collapsible navbar container -->
+    <div
+      class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
+      id="navbarSupportedContent4"
+      data-twe-collapse-item
+    >
+      <!-- Left links -->
+      <ul
+        class="list-style-none me-auto space-x-4 flex flex-col ps-0 lg:mt-1 lg:flex-row"
+        data-twe-navbar-nav-ref
+      >
+        <!-- Home link -->
+      </ul>
+      <ul
+        class="list-style-none space-x-6 me-auto flex flex-col ps-0 lg:flex-row"
+        data-twe-navbar-nav-ref
+      >
+      <li class="mb-4 lg:mb-0  lg:pe-2" data-twe-nav-item-ref>
+          <!-- Dashboard link -->
+          <a
+            [routerLink]="['/']"
+            class="text-gray-800 tracking-wide transition duration-200 text-xl "
+            href="#"
+            data-twe-nav-link-ref
+            >Home</a
+          >
+        </li>
+        <li class="mb-4 lg:mb-0  lg:pe-2" data-twe-nav-item-ref>
+          <!-- Dashboard link -->
+          <a
+            [routerLink]="['/', 'blog']"
+            class="text-gray-800 tracking-wide transition duration-200 text-xl "
+            href="#"
+            data-twe-nav-link-ref
+            >Blog</a
+          >
+        </li>
+
+        <li class="mb-4 lg:mb-0  lg:pe-2" data-twe-nav-item-ref>
+          <!-- Dashboard link -->
+          <a
+            [routerLink]="['/', 'about']"
+            class="text-gray-800 tracking-wide transition duration-200 text-xl "
+            href="#"
+            data-twe-nav-link-ref
+            >About Us</a
+          >
+        </li>
+
+        <li class="mb-4 lg:mb-0  lg:pe-2" data-twe-nav-item-ref>
+          <!-- Dashboard link -->
+          <a
+            [routerLink]="['/', 'contact-us']"
+            class="text-gray-800 tracking-wide transition duration-200 text-xl "
+            href="#"
+            data-twe-nav-link-ref
+            >Contact Us</a
+          >
+        </li>
+
+
+      
+      
+      </ul>
+
+      <div class="flex items-center">
+        <a
+          [routerLink]="['/long-term-tutoring']"
+          type="button"
+          data-twe-ripple-init
+          data-twe-ripple-color="light"
+          class="me-3 bg-carbon  rounded-full text inline-block bg-primary px-6 pb-2 pt-2.5 text-sm font-medium  leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong hover:cursor-pointer hover:bg-primaryColor"
+        >
+          Long Term Tutoring
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

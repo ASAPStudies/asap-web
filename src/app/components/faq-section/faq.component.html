@@ -1,0 +1,82 @@
+<section class="lg:p-12 relative" #faq>
+  <div class="container">
+    <div class="bg-white">
+      <p
+        class="text-3xl/snug md:text-4xl/snug text-center font-semibold text-default-700"
+      >
+        Frequently Asked Questions
+      </p>
+      <div class="mx-auto max-w-7xl px-6 py-4 sm:py-12 lg:px-8 lg:py-20">
+        <div class="mx-auto max-w-7xl">
+          <div class="p-6 mb-2 border shadow-md rounded-md">
+            @for (item of filteredFaqs; track item; let i=$count) {
+            <dt>
+              <!-- Expand/collapse question button -->
+              <button
+                type="button"
+                class="flex w-full items-start justify-between text-left text-gray-900"
+                aria-controls="faq-0"
+                aria-expanded="false"
+              >
+                <span class="text-lg font-medium p-4 leading-7">{{ item.question }}</span>
+                <span class="ml-6 flex h-7 items-center">
+                  @if ( selectedFaq == null || selectedFaq.question !=
+                  item.question) {
+                  <svg
+                    (click)="toggleFAQ(item)"
+                    class="h-6 w-6"
+                    fill="#4A2A04"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 6v12m6-6H6"
+                    />
+                  </svg>
+                  } @if ( selectedFaq != null && selectedFaq.question ==
+                  item.question ) {
+                  <svg
+                    (click)="toggleFAQ(null)"
+                    class="h-6 w-6"
+                    fill="#4A2A04"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M18 12H6"
+                    />
+                  </svg>
+                  }
+                </span>
+              </button>
+            </dt>
+            @if(selectedFaq != null && selectedFaq.question === item.question) {
+            <dd class="mt-2 pr-12" id="faq-0">
+              <p class="text-base p-4 leading-7 text-gray-600">
+                {{ item.description }}
+              </p>
+            </dd>
+
+            } }
+          </div>
+
+          <a
+            href="javascript:;"
+            (click)="isAllFaqs = !isAllFaqs; showAllFaqs()"
+            class="inline-flex justify-center w-full px-4 py-3 mt-8 font-sans text-sm leading-none text-center text-white no-underline bg-primaryColor rounded-md cursor-pointer hover:bg-carbon hover:border-carbon hover:text-white sm:text-base md:text-lg"
+          >
+            {{ !isAllFaqs ? "Show More" : "Show Less" }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
