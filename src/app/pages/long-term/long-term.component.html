@@ -1,7 +1,7 @@
 <section class="">
   <div class="p-8">
     <div class="grid lg:grid-cols-2 gap-2 max-w-full">
-      <div class="text-carbon">
+      <div class="text-carbon p-4">
         <p class="text-2xl leading-tight md:text-4xl font-bold mb-4">
           Long Term Tutoring
         </p>
@@ -27,107 +27,262 @@
       <!-- end grid-col -->
 
       <div class="bg-white rounded-lg h-fit border-1">
-        <div class="">
-          
-          <form>
-            <!-- Name Field -->
-            <div class="mb-4">
-              <label
-                for="name"
-                class="block text-gray-600 text-sm font-medium mb-1"
-                >Name</label
-              >
-              <input
-                type="text"
-                id="name"
-                name="name"
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-                placeholder="Your name"
-              />
+        <div class="p-4">
+          <form [formGroup]="formData" (ngSubmit)="submitForm()">
+            <div class="grid grid-cols-1 space-x-2 md:grid-cols-2">
+              <div class="mb-4">
+                <label
+                  for="name"
+                  class="block text-carbon text-md font-medium mb-1"
+                  >First Name</label
+                >
+                <input
+                  formControlName="first_name"
+                  type="text"
+                  id="fname"
+                  name="fname"
+                  class="w-full px-4 py-2 focus:outline-none focus:border-carbon"
+                  placeholder="First name"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="name"
+                  class="block text-carbon text-md font-medium mb-1"
+                  >Last Name</label
+                >
+                <input
+                formControlName="last_name"
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="w-full px-4 py-2  focus:outline-none focus:border-carbon"
+                  placeholder="Last name"
+                />
+              </div>
             </div>
 
+            <div class="grid grid-cols-1 space-x-2 md:grid-cols-2">
+              <div class="mb-4">
+                <label
+                  for="name"
+                  class="block text-carbon text-md font-medium mb-1"
+                  >Email</label
+                >
+                <input
+                formControlName="email"
+                  type="email"
+                  id="name"
+                  name="name"
+                  class="w-full px-4 ring-0 active:ring-0 py-2 focus:outline-none focus:border-carbon"
+                  placeholder="Email"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="name"
+                  class="block text-carbon text-md font-medium mb-1"
+                  >Phone</label
+                >
+                <input
+                formControlName="phone_number"
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="w-full px-4 py-2  focus:outline-none focus:border-carbon"
+                  placeholder="Phone"
+                />
+              </div>
+            </div>
+
+            <label for="name" class="text-carbon text-md font-medium mb-1"
+              >Country Of Residence</label
+            >
+            <lib-country-list  class="border border-carbon"></lib-country-list>
             <!-- Email Field -->
-            <div class="mb-4">
-              <label
-                for="email"
-                class="block text-gray-600 text-sm font-medium mb-1"
-                >Email</label
-              >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-                placeholder="Your email"
-              />
-            </div>
+            <div class="grid mb-2 grid-cols-1 md:grid-cols-3">
+              <div class="mb-4 ">
+                <label
+                  for="name"
+                  class="block text-carbon text-md font-medium mb-1"
+                  >Age</label
+                >
+                <select
+                  formControlName="age"
+                  class="p-2 w-full text-carbon focus:border-carbon active:border-carbon focus:ring-0"
+                >
+                  <option value="" disabled selected>Age Range</option>
+                  @for(age of ages; track age){
+                  <option value="{{ age }}">{{ age }}</option>
 
-            <!-- Password Field -->
-            <div class="mb-4">
-              <label
-                for="password"
-                class="block text-gray-600 text-sm font-medium mb-1"
-                >Password</label
-              >
-              <input
-                type="password"
-                id="password"
-                name="password"
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-                placeholder="Your password"
-              />
-            </div>
-            <div class="mb-4">
-              <!-- Select -->
-              <select
-                multiple=""
-                
-                data-hs-select='{
+                  }
+                </select>
+              </div>
+              <div class="mb-4 w-full mx-2">
+                <label
+                  for="name"
+                  class="block text-carbon text-md font-medium mb-1"
+                  >Level of Education</label
+                >
+                <select
+                formControlName="education"
+                  class="p-2 w-full  text-carbon focus:border-carbon active:border-carbon focus:ring-0"
+                >
+                  <option value="" disabled selected>
+                    Select Education Level
+                  </option>
+                  @for(level of educationList; track level){
+                  <option value="{{ level }}">{{ level }}</option>
+
+                  }
+                </select>
+              </div>
+              <div class="w-full  mx-4">
+                <label
+                  for="name"
+                  class="block text-carbon text-md font-medium mb-1"
+                  >Days Available</label
+                >
+                <!-- Select -->
+                <select
+                  formControlName="days_available"
+                  multiple=""
+                  data-hs-select='{
   "placeholder": "Select multiple options...",
   "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
-  "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-3 ps-4 pe-9 flex gap-x-2 text-nowrap w-full cursor-pointer bg-white border border-gray-200 rounded-lg text-start text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 :bg-neutral-900 :border-neutral-700 :text-neutral-400 :focus:outline-none :focus:ring-1 :focus:ring-neutral-600",
-  "dropdownClasses": "mt-2 z-50 w-full max-h-72 p-1 space-y-0.5 bg-white border border-gray-200 rounded-lg overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 :[&::-webkit-scrollbar-track]:bg-neutral-700 :[&::-webkit-scrollbar-thumb]:bg-neutral-500 :bg-neutral-900 :border-neutral-700",
+  "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-3 ps-4 pe-9 flex gap-x-2 text-nowrap w-full cursor-pointer bg-white border border border-gray-500 text-start text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 :bg-neutral-900 :border-neutral-700 :text-neutral-400 :focus:outline-none :focus:ring-1 :focus:ring-neutral-600",
+  "dropdownClasses": "mt-2 z-50 w-full max-h-72 p-1 space-y-0.5 bg-white border overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 :[&::-webkit-scrollbar-track]:bg-neutral-700 :[&::-webkit-scrollbar-thumb]:bg-neutral-500 :bg-neutral-900 :border-neutral-700",
   "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 :bg-neutral-900 :hover:bg-neutral-800 :text-neutral-200 :focus:bg-neutral-800",
   "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"hidden hs-selected:block\"><svg class=\"shrink-0 size-3.5 text-blue-600 :text-blue-500 \" xmlns=\"http:.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"/></svg></span></div>",
   "extraMarkup": "<div class=\"absolute top-1/2 end-3 -translate-y-1/2\"><svg class=\"shrink-0 size-3.5 text-gray-500 :text-neutral-500 \" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m7 15 5 5 5-5\"/><path d=\"m7 9 5-5 5 5\"/></svg></div>"
 }'
-                class="hidden "
-              >
-                <option value="">Choose</option>
-                <option>Sunday</option>
-                <option>Monday</option>
-                <option>Tuesday</option>
-                <option>Wendnesday</option>
-                 <option>Thursday</option>
-                <option>Friday</option>
-                <option>Saturday</option>
-              </select>
-              <!-- End Select -->
+                  class="hidden "
+                >
+                  <option value="">Choose</option>
+                  <option>Sunday</option>
+                  <option>Monday</option>
+                  <option>Tuesday</option>
+                  <option>Wendnesday</option>
+                  <option>Thursday</option>
+                  <option>Friday</option>
+                  <option>Saturday</option>
+                </select>
+                <!-- End Select -->
+              </div>
             </div>
-            <lib-country-list></lib-country-list>
+            <div class="grid grid-cols-1 space-x-2 md:grid-cols-2">
+              <div class="mb-4">
+                <label
+                  for="name"
+                  class="block text-carbon text-md font-medium mb-1"
+                  >Subject</label
+                >
+                <select
+                  formControlName="subject"
+                  class="p-2 w-full  text-carbon focus:border-carbon active:border-carbon focus:ring-0"
+                >
+                  <option value="" disabled selected>
+                    Select Subject
+                  </option>
+                  @for(subject of subjects; track subject){
+                  <option value="{{ subject }}">{{ subject }}</option>
+
+                  }
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="name"
+                  class="block text-carbon text-md font-medium mb-1"
+                  >Topic</label
+                >
+                <input
+                  formControlName="topic"
+                  type="text"
+                  id="topic"
+                  name="topic"
+                  class="w-full px-4 py-2  focus:outline-none focus:border-carbon"
+                  placeholder="Topic"
+                />
+              </div>
+            </div>
+            <!-- Password Field -->
+               <div class="grid grid-cols-1 space-x-2 md:grid-cols-3">
+              <div class="mb-4">
+                <label
+                  for="name"
+                  class="block text-carbon text-md font-medium mb-1"
+                  >Start Date</label
+                >
+                <input
+                  type="date"
+                  id="sdate"
+                  fromControlName="start_date"
+                  name="sdate"
+                  class="w-full px-4 ring-0 active:ring-0 py-2 focus:outline-none focus:border-carbon"
+                  placeholder="Start Date"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="name"
+                  class="block text-carbon text-md font-medium mb-1"
+                  >End Date</label
+                >
+                <input
+                  type="date"
+                  id="edate"
+                  formControlName="end_date"
+                  name="edate"
+                  class="w-full px-4 py-2  focus:outline-none focus:border-carbon"
+                  placeholder="Phone"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  for="name"
+                  class="block text-carbon text-md font-medium mb-1"
+                  >Time</label
+                >
+                <input
+                  fontControlName="time"
+                  type="time"
+                  id="time"
+                  name="time"
+                  class="w-full px-4 py-2  focus:outline-none focus:border-carbon"
+                  
+                />
+              </div>
+            </div>
+
             <!-- Confirm Password Field -->
             <div class="mb-4">
               <label
                 for="confirmPassword"
                 class="block text-gray-600 text-sm font-medium mb-1"
-                >Confirm Password</label
+                >Message</label
               >
-              <input
-                type="password"
+              <textarea
+                type="text"
                 id="confirmPassword"
+                formControlName="message"
+                
                 name="confirmPassword"
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-                placeholder="Confirm your password"
-              />
+                class="w-full px-4 py-2  focus:outline-none focus:border-indigo-500"
+                placeholder="Write us a message........"
+              ></textarea>
             </div>
-            
 
             <!-- Submit Button -->
             <button
               type="submit"
-              class="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700 transition duration-150"
+              class="w-full bg-carbon text-white py-2 rounded-sm hover:bg-gray-400 focus:outline-none transition duration-150"
             >
-              Sign Up
+              Send
             </button>
           </form>
 
