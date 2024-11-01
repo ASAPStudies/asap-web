@@ -1,9 +1,11 @@
+import { NgFor } from "@angular/common";
 import { Component, ElementRef } from "@angular/core";
 
 @Component({
   standalone: true,
   templateUrl: './terms-page.component.html',
   styleUrl: './terms-page.component.css',
+  imports:[NgFor]
 })
 export class TermsPageComponent {
   sectionTitles = [
@@ -25,7 +27,7 @@ export class TermsPageComponent {
   constructor(private el: ElementRef) {}
 
   
-  scrollTo(sectionId: string) {
+  scrollTo(sectionId: number) {
     const section = this.el.nativeElement.querySelector(`#section${sectionId}`);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });

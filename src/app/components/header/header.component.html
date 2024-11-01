@@ -4,29 +4,14 @@
   data-twe-navbar-ref
 >
   <div class="flex w-full flex-wrap items-center justify-between px-3">
-    <div class="w-48">
-      <a class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0" [routerLink]="['/']">
-        <img
-          class="me-2"
-          src="/logo.png"
-          loading="lazy"
-        />
-      </a>
-    </div>
-
-    <!-- Hamburger button for mobile view -->
     <button
-      class="block border-0 bg-transparent px-2 text-black/50 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
-      type="button"
-      data-twe-collapse-init
-      data-twe-target="#navbarSupportedContent4"
-      aria-controls="navbarSupportedContent4"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
+      (click)="openSideBar()"
+      class="block border-0  focus:ring-0 dark:text-neutral-200 lg:hidden"
+    
     >
       <!-- Hamburger icon -->
       <span
-        class="[&>svg]:w-7 [&>svg]:stroke-black/50 dark:[&>svg]:stroke-neutral-200"
+        class="[&>svg]:w-7 [&>svg]:stroke-gray-700 dark:[&>svg]:stroke-gray-800"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +26,17 @@
         </svg>
       </span>
     </button>
+    <div class="w-48">
+      <a
+        class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0"
+        [routerLink]="['/']"
+      >
+        <img class="" src="/logo.png" loading="lazy" />
+      </a>
+    </div>
+
+    <!-- Hamburger button for mobile view -->
+    
 
     <!-- Collapsible navbar container -->
     <div
@@ -59,52 +55,48 @@
         class="list-style-none space-x-6 me-auto flex flex-col ps-0 lg:flex-row"
         data-twe-navbar-nav-ref
       >
-      <li class="mb-4 lg:mb-0  lg:pe-2" data-twe-nav-item-ref>
+        <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
           <!-- Dashboard link -->
           <a
             [routerLink]="['/']"
-            class="text-gray-800 tracking-wide transition duration-200 text-xl "
+            class="text-gray-800 tracking-wide transition duration-200 text-xl"
             href="#"
             data-twe-nav-link-ref
             >Home</a
           >
         </li>
-        <li class="mb-4 lg:mb-0  lg:pe-2" data-twe-nav-item-ref>
+        <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
           <!-- Dashboard link -->
           <a
             [routerLink]="['/', 'blog']"
-            class="text-gray-800 tracking-wide transition duration-200 text-xl "
+            class="text-gray-800 tracking-wide transition duration-200 text-xl"
             href="#"
             data-twe-nav-link-ref
             >Blog</a
           >
         </li>
 
-        <li class="mb-4 lg:mb-0  lg:pe-2" data-twe-nav-item-ref>
+        <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
           <!-- Dashboard link -->
           <a
             [routerLink]="['/', 'about']"
-            class="text-gray-800 tracking-wide transition duration-200 text-xl "
+            class="text-gray-800 tracking-wide transition duration-200 text-xl"
             href="#"
             data-twe-nav-link-ref
             >About Us</a
           >
         </li>
 
-        <li class="mb-4 lg:mb-0  lg:pe-2" data-twe-nav-item-ref>
+        <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
           <!-- Dashboard link -->
           <a
             [routerLink]="['/', 'contact-us']"
-            class="text-gray-800 tracking-wide transition duration-200 text-xl "
+            class="text-gray-800 tracking-wide transition duration-200 text-xl"
             href="#"
             data-twe-nav-link-ref
             >Contact Us</a
           >
         </li>
-
-
-      
-      
       </ul>
 
       <div class="flex items-center">
@@ -113,11 +105,76 @@
           type="button"
           data-twe-ripple-init
           data-twe-ripple-color="light"
-          class="me-3 bg-carbon  rounded-full text inline-block bg-primary px-6 pb-2 pt-2.5 text-sm font-medium  leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong hover:cursor-pointer hover:bg-primaryColor"
+          class="me-3 bg-carbon rounded-full text inline-block bg-primary px-6 pb-2 pt-2.5 text-sm font-medium leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong hover:cursor-pointer hover:bg-primaryColor"
         >
           Long Term Tutoring
         </a>
       </div>
+    </div>
+  </div>
+
+  <div
+    [ngClass]="showSidebar ? 'left-64' : 'left-0'"
+    class="hs-overlay text-carbon  lg:hidden hs-overlay-open:translate-x-10 -translate-x-full fixed top-0 transition-all transform h-full max-w-[270px] w-full z-[60] bg-white shadow-md"
+    tabindex="-1"
+  >
+    <div
+      class="flex justify-center items-center h-20 transition-all duration-300 relative"
+    >
+      <a href="javascript:;" (click)="showSidebar = false">
+        <img src="/logo.png" alt="logo" class="h-10" />
+      </a>
+      <i
+        class="fa fa-close text-xl text-primaryColor align-middle me-2 absolute right-1 cursor-pointer"
+        (click)="showSidebar = !showSidebar"
+      ></i>
+    </div>
+
+    <div class="custom-scroll h-[calc(100%-4rem)]">
+      <nav class="hs-accordion-group p-4 w-full flex flex-col flex-wrap">
+        <ul class="space-y-2.5">
+          <li>
+            <a
+              class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
+              routerLink="/home"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
+              routerLink="/about"
+            >
+              About us
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
+              routerLink="/blog"
+            >
+              Blogs
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
+              routerLink="/contact-us"
+            >
+              Contact Us
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
+              routerLink="long-term-tutoring"
+            >
+              Long-term Tutoring
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </nav>
