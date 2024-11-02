@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { IStaticMethods } from 'preline/preline';
 import { Router, Event, NavigationEnd } from '@angular/router';
+
 declare global {
   interface Window {
     HSStaticMethods: IStaticMethods;
