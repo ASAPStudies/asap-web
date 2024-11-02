@@ -124,10 +124,10 @@
       <a href="javascript:;" (click)="showSidebar = false">
         <img src="/logo.png" alt="logo" class="h-10" />
       </a>
-      <i
-        class="fa fa-close text-xl text-primaryColor align-middle me-2 absolute right-1 cursor-pointer"
+      <p
+        class="text-xl font-extrabold text-primaryColor align-middle me-2 absolute right-1 cursor-pointer"
         (click)="showSidebar = !showSidebar"
-      ></i>
+      >x</p>
     </div>
 
     <div class="custom-scroll h-[calc(100%-4rem)]">
@@ -136,7 +136,7 @@
           <li>
             <a
               class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
-              routerLink="/home"
+              routerLink="/"
             >
               Home
             </a>

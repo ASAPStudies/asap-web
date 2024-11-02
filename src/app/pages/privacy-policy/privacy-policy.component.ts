@@ -1,9 +1,12 @@
+import { NgClass, NgFor } from "@angular/common";
 import { Component, ElementRef } from "@angular/core";
+import { FormsModule, ReactiveFormsModule, FormGroup, FormControl, Validators} from "@angular/forms";
 
 @Component({
   standalone: true,
   templateUrl: './privacy-policy.component.html',
   styleUrl: './privacy-policy.component.css',
+  imports: [NgFor, NgClass, FormsModule, ReactiveFormsModule],
 })
 export class PrivacyPageComponent {
   sectionTitles = [
@@ -26,10 +29,13 @@ export class PrivacyPageComponent {
 
   ngOnInit() {}
 
-  scrollTo(sectionId: string) {
+
+
+  scrollTo(sectionId: number) {
     const section = this.el.nativeElement.querySelector(`#section${sectionId}`);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
 }
