@@ -3,13 +3,17 @@ import { FormsModule,
   ReactiveFormsModule, 
   FormGroup, 
   FormControl, 
-  Validators } from '@angular/forms';
-import { NgxCountriesDropdownModule } from 'ngx-countries-dropdown';
+  Validators, 
+  FormSubmittedEvent} from '@angular/forms';
+import { ToastService } from 'angular-toastify';
+import { ICountry, NgxCountriesDropdownModule } from 'ngx-countries-dropdown';
+import { FormService } from '../../services/data/form.service';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-long-term',
   standalone: true,
-  imports: [NgxCountriesDropdownModule, FormsModule, ReactiveFormsModule],
+  imports: [NgxCountriesDropdownModule, FormsModule, ReactiveFormsModule, NgOptimizedImage],
   templateUrl: './long-term.component.html',
   styleUrl: './long-term.component.css',
 })
@@ -59,11 +63,24 @@ export class LongTermComponent {
     time: new FormControl('', ),
     
   });
+  isLoading:boolean = false
+
+  onCountryChange(country: any){
+    this.formData.value.country = country.name
+    
+  }
+  constructor(private readonly toast:ToastService, private readonly formService:FormService){}
 
   submitForm(): void {
-    console.log(this.formData.value);
+   this.isLoading = true
     if (this.formData.invalid){
-      console.log('invalid')
+      this.toast.error("Invalid Form Data")
+      return
     }
+    this.formService.postData(this.formData).subscribe((res)=> {
+      this.isLoading = false
+      this.formData.reset()
+    })
+    
   }
 }

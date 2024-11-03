@@ -1,22 +1,33 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable ,from} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FormService {
-  constructor(private http: HttpClient) {}
-  postData(data: object): Observable<any> {
-    // const url = 'https://formsubmit.co/ajax/info@asapstudies.com';
-        const url = 'https://formsubmit.co/ajax/yelpoeayahaya@gmail.com';
-
-
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    });
-
-    return this.http.post(url, data, { headers });
+  constructor() {}
+  
+  postData(formData:any):Observable<any>{
+    const dataSub = from(
+      fetch('https://formsubmit.co/ajax/yelpoeayahaya@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData), // Use form value here
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then((data) => console.log(data))
+        .catch((error) => null)
+    );
+   return dataSub
+    
   }
 }

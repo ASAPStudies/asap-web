@@ -27,42 +27,23 @@ export class ContactComponent {
     message: new FormControl(''),
   });
 
-  constructor(private toast:ToastService) {}
+  isLoading:boolean = false
+  constructor(private toast:ToastService, private formService: FormService) {}
   submit() {
-    // Check if the form is valid
+    this.isLoading  = true
+    this.formService.postData(this.formData.value).subscribe((res)=>{
+      this.openToast("sucess", "Form Submited")
+      this.isLoading  = false
+      this.formData.reset()
+    })
+        // Check if the form is valid
     if (this.formData.invalid) {
             this.openToast('info', 'Incomplete Form');
 
       return;
     }
 
-    const dataSub = from(
-      fetch('https://formsubmit.co/ajax/yelpoeayahaya@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(this.formData.value), // Use form value here
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then((data) => console.log(data))
-        .catch((error) =>
-          this.toast.error("There was and error")
-        )
-    );
-    if (this.formData.valid){
-      this.openToast("info", "Complete Form")
-    }
-    dataSub.subscribe(()=>{
-      this.openToast("success", "Message sent")
-      this.formData.reset()
-    });
+    
     
   }
 

@@ -20,9 +20,9 @@
 
         <div class="relative rounded-xl overflow-hidden my-6">
           <img
-            src="/young-student.png"
-            width="500"
-            height="400"
+            ngSrc="/young-student.png"
+            width="600"
+            height="600"
             alt=""
             class="max-w-full h-full"
           />
@@ -107,7 +107,7 @@
             <label for="name" class="text-carbon text-md font-medium mb-1"
               >Country Of Residence</label
             >
-            <lib-country-list class="border border-carbon"></lib-country-list>
+            <lib-country-list (onCountryChange)="onCountryChange($event)" class="border border-carbon"></lib-country-list>
             <!-- Email Field -->
             <div class="grid mb-2 grid-cols-1 md:grid-cols-3">
               <div class="mb-4">
