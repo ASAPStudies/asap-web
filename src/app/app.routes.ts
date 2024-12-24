@@ -9,12 +9,13 @@ import { TermsPageComponent } from './pages/terms-and-conditions/terms-page.comp
 import { PrivacyPageComponent } from './pages/privacy-policy/privacy-policy.component';
 
 export const routes: Routes = [
-    {path:"login", component:LoginComponent, title:"Login"},
-    {path:"",component:HomeComponent},
-    {path:"blog", component:BlogComponent},
-    {path:"about", component:AboutPageComponent},
-    {path:'long-term-tutoring', component:LongTermComponent},
-    {path:'contact-us', component:ContactComponent},
-    {path:'terms-and-conditions', component:TermsPageComponent},
-    {path:'privacy-policies', component:PrivacyPageComponent}
+  { path: 'login', component: LoginComponent, title: 'Login' },
+  { path: 'home', component: HomeComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'about', component: AboutPageComponent },
+  { path: 'long-term-tutoring', component: LongTermComponent },
+  { path: 'contact-us', component: ContactComponent },
+  { path: 'terms-and-conditions', component: TermsPageComponent },
+  { path: 'privacy-policies', component: PrivacyPageComponent },
+  { path: '**', component: HomeComponent },
 ];

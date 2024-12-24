@@ -1,0 +1,36 @@
+<div class="relative w-full max-w-4xl mx-auto">
+  <!-- Carousel wrapper -->
+  <div class="overflow-hidden relative  rounded-lg">
+    <div
+      class="flex transition-transform duration-500 ease-in-out transform"
+      #carousel
+    >
+      @for (image of imagesList; track $index) {
+      <div class="min-w-full">
+        <img
+          ngSrc="{{ image }}"
+          alt="Slide {{ $index }}"
+          width="800"
+          height="800"
+          class="w-full h-full relative md:bottom-16"
+        />
+      </div>
+      }
+    </div>
+    <div class="flex flex-row justify-center items-center space-x-10">
+      <div
+        [ngClass]="{ 'bg-primaryColor': currentIndex === 0 }"
+        class="h-1.5 w-1.5 rounded-full bg-cInactive"
+      ></div>
+      <div
+        [ngClass]="{ 'bg-primaryColor': currentIndex === 1 }"
+        class="h-1.5 w-1.5 rounded-full bg-cInactive"
+      ></div>
+      <div
+        [ngClass]="{ 'bg-primaryColor': currentIndex === 2 }"
+        class="h-1.5 w-1.5 rounded-full bg-cInactive"
+      ></div>
+      
+    </div>
+  </div>
+</div>

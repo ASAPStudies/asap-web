@@ -1,6 +1,7 @@
+.active {
+  color: #9E5F07;
+  font-weight: bold;
+  border-bottom-width: 2px;
+  border-bottom-color: #9E5F07;
 
-* {
-  font-family: "Roboto", serif;
-  font-weight: 500;
-  font-style: normal;
 }

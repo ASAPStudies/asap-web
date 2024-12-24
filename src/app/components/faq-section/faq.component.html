@@ -1,14 +1,12 @@
 <section class="lg:p-12 relative" #faq>
-  <div class="container">
+  <div class="container w-full">
     <div class="bg-white">
-      <p
-        class="text-3xl/snug md:text-4xl/snug text-center font-semibold text-default-700"
-      >
+      <p class="lg:text-2xl text-md underline text-primaryColor text-center font-semibold text-default-700">
         Frequently Asked Questions
       </p>
-      <div class="mx-auto max-w-7xl px-6 py-4 sm:py-12 lg:px-8 lg:py-20">
-        <div class="mx-auto max-w-7xl">
-          <div class="p-6 mb-2 border shadow-md rounded-md">
+      <div class="mx-auto w-full px-6 py-4 sm:py-12 lg:px-8 lg:py-20">
+        <div class="mx-auto w-full ">
+          <div class="p-6 mb-2 rounded-md">
             @for (item of filteredFaqs; track item; let i=$count) {
             <dt>
               <!-- Expand/collapse question button -->
@@ -18,10 +16,9 @@
                 aria-controls="faq-0"
                 aria-expanded="false"
               >
-                <span class="text-lg font-medium p-4 leading-7">{{ item.question }}</span>
-                <span class="ml-6 flex h-7 items-center">
-                  @if ( selectedFaq == null || selectedFaq.question !=
-                  item.question) {
+                <span class="text-sm md:text-lg border-b w-full border-b-gray-200 font-light p-4 leading-7">{{ item.question }}</span>
+                <span class="ml-6 mt-4 flex h-7 items-center">
+                  @if (selectedFaq == null || selectedFaq.question != item.question) {
                   <svg
                     (click)="toggleFAQ(item)"
                     class="h-6 w-6"
@@ -31,14 +28,9 @@
                     stroke="currentColor"
                     aria-hidden="true"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 6v12m6-6H6"
-                    />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
                   </svg>
-                  } @if ( selectedFaq != null && selectedFaq.question ==
-                  item.question ) {
+                  } @if (selectedFaq != null && selectedFaq.question == item.question) {
                   <svg
                     (click)="toggleFAQ(null)"
                     class="h-6 w-6"
@@ -48,11 +40,7 @@
                     stroke="currentColor"
                     aria-hidden="true"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M18 12H6"
-                    />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
                   </svg>
                   }
                 </span>
@@ -60,22 +48,22 @@
             </dt>
             @if(selectedFaq != null && selectedFaq.question === item.question) {
             <dd class="mt-2 pr-12" id="faq-0">
-              <p class="text-base p-4 leading-7 text-gray-600">
-                {{ item.description }}
-              </p>
+              <p class="text-base p-4 leading-7 text-gray-600">{{ item.description }}</p>
             </dd>
-
             } }
           </div>
+        </div>
 
-          <a
-            href="javascript:;"
+        <!-- Centering the button below the FAQs -->
+        <div class="flex justify-center mt-8">
+          <button
             (click)="isAllFaqs = !isAllFaqs; showAllFaqs()"
-            class="inline-flex justify-center w-full px-4 py-3 mt-8 font-sans text-sm leading-none text-center text-white no-underline bg-primaryColor rounded-md cursor-pointer hover:bg-carbon hover:border-carbon hover:text-white sm:text-base md:text-lg"
+            class="inline-flex w-80  font-light justify-center px-4 py-3 font-sans text-sm leading-none text-center text-white no-underline bg-primaryColor rounded-md cursor-pointer hover:bg-carbon hover:border-carbon hover:text-white sm:text-base md:text-[20px]"
           >
             {{ !isAllFaqs ? "Show More" : "Show Less" }}
-          </a>
+          </button>
         </div>
+
       </div>
     </div>
   </div>

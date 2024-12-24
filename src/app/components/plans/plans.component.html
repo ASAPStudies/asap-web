@@ -1,186 +1,22 @@
 <div class="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
   <div class="mx-auto max-w-4xl text-center">
     <p
-      class="mt-2 text-balance text-3xl lg:text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl"
+      class="mt-2 text-balance text-md md:text-[24px] text-primaryColor underline font-semibold"
     >
-      <span class="text-primaryColor">ASAP </span>Subscription plans
+      Choose your plan
     </p>
   </div>
-  <div
-    class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2"
-  >
+  <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 my-12">
     <div
-      class="rounded-md bg-white/60 p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-bl-3xl lg:rounded-tr-none"
+      class="mx-auto grid max-w-md grid-cols-1 gap-8 lg:max-w-5xl lg:grid-cols-2 lg:gap-8"
     >
-      <h3 id="tier-hobby" class="text-base/7 font-semibold">QA Requests</h3>
-      <p class="mt-4 flex items-baseline gap-x-2">
-        <span class="text-5xl font-semibold tracking-tight text-gray-900"
-          >$3</span
-        >
-        <span class="text-base text-gray-500">= {{ "32" | ghs }}</span>
-      </p>
-      <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-600 sm:mt-10">
-        <li class="flex gap-x-3">
-          <svg
-            class="h-6 w-5 flex-none text-primaryColor"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-            data-slot="icon"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          Post Questions and Assignments
-        </li>
-
-        <li class="flex gap-x-3">
-          <svg
-            class="h-6 w-5 font-bold flex-none text-primaryColor"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-            data-slot="icon"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          Get answers from our verified tutors from around the world
-        </li>
-        <li class="flex gap-x-3">
-          <svg
-            class="h-6 w-5 flex-none text-primaryColor"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-            data-slot="icon"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          24-hour support response time
-        </li>
-      </ul>
-    </div>
-
-    <div
-      class="relative rounded-md bg-black p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10"
-    >
-      <h3 id="tier-enterprise" class="text-base/7 font-semibold text-white">
-        Live Tutoring
-      </h3>
-      <p class="mt-4 flex items-baseline gap-x-2">
-        <span class="text-5xl font-semibold tracking-tight text-white">$5</span>
-        <span class="text-base text-gray-400">= {{ "60" | ghs }}</span>
-      </p>
-      <p class="mt-6 text-base/7 text-gray-300"></p>
-      <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300 sm:mt-10">
-        <li class="flex gap-x-3">
-          <svg
-            class="h-6 w-5 flex-none text-primaryColor"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-            data-slot="icon"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          One on One Tutoring (access to video camera and text)
-        </li>
-        <li class="flex gap-x-3">
-          <svg
-            class="h-6 w-5 flex-none text-primaryColor"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-            data-slot="icon"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          Group studies (access to video camera and text)
-        </li>
-        <li class="flex gap-x-3">
-          <svg
-            class="h-6 w-5 flex-none text-primaryColor"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-            data-slot="icon"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          Provide calender feature for live tutoring schedules.
-        </li>
-        <li class="flex gap-x-3">
-          <svg
-            class="h-6 w-5 flex-none text-primaryColor"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-            data-slot="icon"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          Post Questions and Assignments
-        </li>
-        <li class="flex gap-x-3">
-          <svg
-            class="h-6 w-5 flex-none text-primaryColor"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-            data-slot="icon"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          Get answers from our verified tutors from around the world
-        </li>
-        <li class="flex gap-x-3">
-          <svg
-            class="h-6 w-5 flex-none text-primaryColor"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-            data-slot="icon"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          Organized discussions
-        </li>
-      </ul>
+      <app-plan-card
+        description="Unlock your full potential with our Free plan on us."
+        [items]="freeItems"
+        title="Free Version"
+      />
+      <app-plan-card [items]="premuimItems"  description="Unlock your full potential with our Premium plan, at just $7 per month!
+      Premium users enjoy:" title="Premium Version" />
     </div>
   </div>
 </div>

@@ -1,106 +1,28 @@
-<section class="p-12">
-  <div
-    class="absolute inset-0 -z-10 bg-gradient-to-t to-primaryColor/40 via via-white/50 from-white"
-  ></div>
-  <div class="container">
-    <div class="grid lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <span class="text-3xl md:text-6xl leading-tight font-bold">
-          Are you
-          <span class="text-primaryColor">Struggling</span>
-          with your Assignment, Project Work & Research
-        </span>
-
-        <p class="text-xl text-black pb-2 md:py-2">
-          Join millions of resilient students and rise above all your academic
-          challenges.
-        </p>
-        <div class="py-4 w-52 h-28">
-          <a href="#links"
-            class="rounded-md hover:bg-carbon transition-all tracking-wide duration-150 delay-75 hover:cursor-pointer bg-primaryColor text-white text-xl p-3 lg:p-4"
-            >Get Started
-          </a>
-          
-        </div>
-      </div>
-      <!-- end grid-col -->
-
-      <div class="relative">
-        <div class="relative w-full h-full flex items-end lg:-mb-12">
-          <div
-            class="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-white"
-          ></div>
-          <img
-            height="300"
-            src="/header1.png"
-            alt=""
-            class="max-w-full h-full"
-          />
-        </div>
-
-        <div class="hidden lg:block absolute bottom-0 -start-40"></div>
-      </div>
-      <!-- end grid-col -->
-    </div>
-
-    <!-- end grid -->
+<section class="">
+  <app-carousel [autoScroll]="true" [slides]="imagesList" />
+  <div class="py-20 px-2 lg:px-56">
+    <h4 class="text-center text-sm md:text-[16px] text-carbon">
+      Transform the way you learn with the ASAP Studies app! Submit your
+      assignments and receive expert guidance-entirely free. Whether you're
+      tackling tough coursework or just need a little extra support, our app is
+      designed to make your academic journey smoother. Don't wait- download the
+      app today and take the first step toward success!
+    </h4>
   </div>
 
-  <!-- end container -->
+  <div class="w-full flex flex-row mt-8 space-x-4 justify-center items-center">
+    <a href="https://apps.apple.com/us/app/asap-studies/id6471437660">
+      <img  src="./store/apple.png" height="50" width="150" />
+    </a>
+    <a
+      href="https://play.google.com/store/apps/details?id=com.asapstudies.app&pcampaignid=web_share"
+    >
+      <img src="./store/google.png" height="50" width="150" />
+    </a>
+  </div>
 </section>
+<how-asap-helps /> 
+<app-plans></app-plans>
+<app-faq></app-faq>
 
-<app-about-section />
-<how-asap-helps />
-
-<app-plans />
-<app-faq />
-<div class="bg-[#09090b] text-white hidden">
-  <div class="container">
-    <div class="lg:py-10 py-6">
-      <div class="grid lg:grid-cols-2 items-center gap-6">
-        <div class="">
-          <div class="grid md:grid-cols-3 items-center gap-6">
-            <div class="">
-              <p class="text-3xl text-default-900 font-medium mb-2">2.3k</p>
-              <p class="text-sm text-default-600">Online courses</p>
-            </div>
-            <!-- end grid-col -->
-            <div class="">
-              <p class="text-3xl text-default-900 font-medium mb-2">500+</p>
-              <p class="text-sm text-default-600">Certified Instructor</p>
-            </div>
-            <!-- end grid-col -->
-            <div class="">
-              <p class="text-3xl text-default-900 font-medium mb-2">99.9%</p>
-              <p class="text-sm text-default-600">Success Rate</p>
-            </div>
-            <!-- end grid-col -->
-          </div>
-          <!-- end grid -->
-        </div>
-        <!-- end grid-col -->
-
-        <div class="">
-          <p class="text-3xl font-medium lg:text-end text-default-950 mb-6">
-            Start learning with 23.4k students <br class="hidden xl:block" />
-            around the world.
-          </p>
-          <div class="flex items-center lg:justify-end gap-4">
-            <a
-              href="javascript:;"
-              class="inline-flex items-center gap-6 text-sm py-2.5 px-4 xl:px-5 rounded text-white bg-primaryColor hover:bg-carbon transition-all"
-              >Join the Family</a
-            >
-            <a
-              href="javascript:;"
-              class="inline-flex items-center gap-6 text-sm py-2.5 px-4 xl:px-5 rounded border border-carbon hover:bg-carbon hover:text-white transition-all duration-500"
-              >Browse all courses</a
-            >
-          </div>
-        </div>
-        <!-- end grid-col -->
-      </div>
-      <!-- end grid -->
-    </div>
-  </div>
-</div>
+<!-- Additional content here -->

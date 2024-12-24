@@ -1,14 +1,11 @@
-<!-- Main navigation container -->
- <app-promo-header />
 <nav
-  class="relative flex w-full flex-wrap items-center justify-between bg-white shadow-xl py-2 shadow-dark-mild lg:py-4"
+  class="relative flex w-full p-2 flex-wrap items-center justify-between bg-white"
   data-twe-navbar-ref
 >
   <div class="flex w-full flex-wrap items-center justify-between px-3">
     <button
       (click)="openSideBar()"
-      class="block border-0  focus:ring-0 dark:text-neutral-200 lg:hidden"
-    
+      class="block border-0 focus:ring-0 dark:text-neutral-200 lg:hidden"
     >
       <!-- Hamburger icon -->
       <span
@@ -30,14 +27,13 @@
     <div class="w-48">
       <a
         class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0"
-        [routerLink]="['/']"
+        [routerLink]="['/', 'home']"
       >
-        <img class="" src="/logo.png" loading="lazy" />
+        <img height="100" width="150" class="" ngSrc="/logo.png" loading="lazy" />
       </a>
     </div>
 
     <!-- Hamburger button for mobile view -->
-    
 
     <!-- Collapsible navbar container -->
     <div
@@ -59,29 +55,21 @@
         <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
           <!-- Dashboard link -->
           <a
-            [routerLink]="['/']"
-            class="text-gray-800 tracking-wide transition duration-200 text-xl"
+            routerLinkActive="active"
+            [routerLink]="['/home']"
+            class="text-gray-800 transition duration-200 text-lg"
             href="#"
             data-twe-nav-link-ref
             >Home</a
-          >
-        </li>
-        <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-          <!-- Dashboard link -->
-          <a
-            [routerLink]="['/', 'blog']"
-            class="text-gray-800 tracking-wide transition duration-200 text-xl"
-            href="#"
-            data-twe-nav-link-ref
-            >Blog</a
           >
         </li>
 
         <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
           <!-- Dashboard link -->
           <a
+            routerLinkActive="active"
             [routerLink]="['/', 'about']"
-            class="text-gray-800 tracking-wide transition duration-200 text-xl"
+            class="text-gray-800 transition duration-200 text-lg"
             href="#"
             data-twe-nav-link-ref
             >About Us</a
@@ -91,8 +79,9 @@
         <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
           <!-- Dashboard link -->
           <a
+            routerLinkActive="active"
             [routerLink]="['/', 'contact-us']"
-            class="text-gray-800 tracking-wide transition duration-200 text-xl"
+            class="text-gray-800 transition duration-200 text-lg"
             href="#"
             data-twe-nav-link-ref
             >Contact Us</a
@@ -106,7 +95,7 @@
           type="button"
           data-twe-ripple-init
           data-twe-ripple-color="light"
-          class="me-3 bg-carbon rounded-full text inline-block bg-primary px-6 pb-2 pt-2.5 text-sm font-medium leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong hover:cursor-pointer hover:bg-primaryColor"
+          class="me-3 bg-carbon rounded-full inline-block bg-primary px-6 pb-2 pt-2.5 text-sm font-medium text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none active:shadow-primary-2 motion-reduce:transition-none hover:cursor-pointer hover:bg-primaryColor"
         >
           Long Term Tutoring
         </a>
@@ -116,7 +105,7 @@
 
   <div
     [ngClass]="showSidebar ? 'left-64' : 'left-0'"
-    class="hs-overlay text-carbon  lg:hidden hs-overlay-open:translate-x-10 -translate-x-full fixed top-0 transition-all transform h-full max-w-[270px] w-full z-[60] bg-white shadow-md"
+    class="hs-overlay text-carbon lg:hidden hs-overlay-open:translate-x-10 -translate-x-full fixed top-0 transition-all transform h-full max-w-[270px] w-full z-[60] bg-white shadow-md"
     tabindex="-1"
   >
     <div
@@ -128,7 +117,9 @@
       <p
         class="text-xl font-extrabold text-primaryColor align-middle me-2 absolute right-1 cursor-pointer"
         (click)="showSidebar = !showSidebar"
-      >x</p>
+      >
+        x
+      </p>
     </div>
 
     <div class="custom-scroll h-[calc(100%-4rem)]">
@@ -150,14 +141,7 @@
               About us
             </a>
           </li>
-          <li>
-            <a
-              class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
-              routerLink="/blog"
-            >
-              Blogs
-            </a>
-          </li>
+
           <li>
             <a
               class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
