@@ -9,12 +9,13 @@ import {
 import { FormService } from '../../services/data/form.service';
 import { from } from 'rxjs';
 import { ToastService, AngularToastifyModule } from 'angular-toastify'; 
+import { NgOptimizedImage } from '@angular/common';
 @Component({
   selector: 'app-contact',
   standalone: true,
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
-  imports: [FormsModule, ReactiveFormsModule, AngularToastifyModule],
+  imports: [FormsModule, ReactiveFormsModule, AngularToastifyModule, NgOptimizedImage],
   
 })
 export class ContactComponent {
@@ -39,7 +40,7 @@ export class ContactComponent {
         // Check if the form is valid
     if (this.formData.invalid) {
             this.openToast('info', 'Incomplete Form');
-
+            this.isLoading = false
       return;
     }
 
@@ -50,7 +51,7 @@ export class ContactComponent {
   openToast(type:string, message:string){
     type === 'success'
       ? this.toast.success(message)
-      : this.toast.info(message);
+      : this.toast.error(message);
     
   }
 }

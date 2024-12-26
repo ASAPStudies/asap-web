@@ -82,10 +82,13 @@ export class LongTermComponent {
     this.formService.postData(this.formData.value).subscribe((res) => {
       this.isLoading = false;
       this.formData.reset();
+
+      this.isLoading = false
     });
     // Check if the form is valid
     if (this.formData.invalid) {
       this.openToast('info', 'Incomplete Form');
+      this.isLoading = false;
 
       return;
     }
