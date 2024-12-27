@@ -6,6 +6,7 @@ import { PlansComponent } from '../../components/plans/plans.component';
 import { FaqsComponent } from '../../components/faq-section/faq.component';
 import { ButtonModule } from 'primeng/button';
 import { CarouselComponent } from '../../components/carousel/carousel.component';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -18,10 +19,15 @@ import { CarouselComponent } from '../../components/carousel/carousel.component'
     FaqsComponent,
     ButtonModule,
     CarouselComponent,
-    HowAsapHelpsComponent
-],
+    HowAsapHelpsComponent,
+  ],
 })
 export class HomeComponent {
   imagesList: string[] = ['./caro/s1.png', './caro/s2.png', './caro/s2.png'];
-  
+
+  constructor(private meta: Meta, private title: Title) {
+    this.title.setTitle(
+      'Academic Special Assistant - Expert Tutoring Services'
+    );
+  }
 }

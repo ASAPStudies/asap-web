@@ -8,7 +8,7 @@ import { Component, ElementRef, Input, ViewChild, AfterViewInit} from '@angular/
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.css',
 })
-export class CarouselComponent {
+export class CarouselComponent implements AfterViewInit {
   constructor() {
     if (this.autoScroll) {
       setInterval(() => {
@@ -16,7 +16,7 @@ export class CarouselComponent {
       }, this.scrollDelay);
     }
   }
-  imagesList: string[] = ['./caro/s1.png', './caro/s2.png', './caro/s3.png'];
+  imagesList: string[] = ['caro/s1.png', './caro/s2.png', './caro/s3.png'];
   currentIndex: number = 0;
   totalSlides:number = 0;
   @Input() slides!: string[];

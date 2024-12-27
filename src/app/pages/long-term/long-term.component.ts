@@ -11,6 +11,7 @@ import { AngularToastifyModule, ToastService } from 'angular-toastify';
 import { ICountry, NgxCountriesDropdownModule } from 'ngx-countries-dropdown';
 import { FormService } from '../../services/data/form.service';
 import { NgOptimizedImage } from '@angular/common';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-long-term',
@@ -75,7 +76,9 @@ export class LongTermComponent {
   onCountryChange(country: any) {
     this.formData.value.country = country.name;
   }
-  constructor(private toast: ToastService, private formService: FormService) {}
+  constructor(private toast: ToastService, private formService: FormService, private title:Title) {
+    this.title.setTitle('ASAP Studies | Long Term Tutoring Serivices')
+  }
   submit() {
     this.isLoading = true;
     
