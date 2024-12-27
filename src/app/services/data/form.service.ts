@@ -10,7 +10,7 @@ export class FormService {
   
   postData(formData:any):Observable<any>{
     const dataSub = from(
-      fetch('https://formsubmit.co/ajax/yelpoeayahaya@gmail.com', {
+      fetch('https://formsubmit.co/ajax/asapstudies1@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
