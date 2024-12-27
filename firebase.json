@@ -1,16 +1,10 @@
 {
   "hosting": {
-    "public": "dist/practice-17",
+    "public": "dist/practice-17/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
   }
 }
