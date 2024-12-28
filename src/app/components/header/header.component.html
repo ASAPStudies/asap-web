@@ -27,7 +27,7 @@
     <div class="w-48 flex justify-center ">
       <a
         class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0"
-        [routerLink]="['/', 'home']"
+        href="/home"
       >
         <img height="150" width="200" class="md:w-52 md:h-12 w-[140px] h-[40px]  " ngSrc="/logo.png" loading="lazy" />
       </a>
@@ -56,9 +56,8 @@
           <!-- Dashboard link -->
           <a
             routerLinkActive="active"
-            [routerLink]="['/home']"
             class="text-gray-800 transition duration-200 text-lg"
-            href="#"
+            href="/home"
             data-twe-nav-link-ref
             >Home</a
           >
