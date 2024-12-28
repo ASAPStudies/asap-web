@@ -7,6 +7,7 @@ import { FaqsComponent } from '../../components/faq-section/faq.component';
 import { ButtonModule } from 'primeng/button';
 import { CarouselComponent } from '../../components/carousel/carousel.component';
 import { Meta, Title } from '@angular/platform-browser';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -14,12 +15,12 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrls: ['./home.component.css'], // Fixed property name
   standalone: true,
   imports: [
-    RouterLink,
     PlansComponent,
     FaqsComponent,
     ButtonModule,
     CarouselComponent,
     HowAsapHelpsComponent,
+    NgOptimizedImage
   ],
 })
 export class HomeComponent {

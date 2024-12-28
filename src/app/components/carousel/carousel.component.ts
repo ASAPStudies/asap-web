@@ -18,15 +18,17 @@ export class CarouselComponent implements AfterViewInit {
   }
   imagesList: string[] = ['caro/s1.png', './caro/s2.png', './caro/s3.png'];
   currentIndex: number = 0;
-  totalSlides:number = 0;
+  totalSlides: number = 0;
   @Input() slides!: string[];
-  @Input() scrollDelay:number =7000
-  @Input() autoScroll: boolean= true;
+  @Input() scrollDelay: number = 7000;
+  @Input() autoScroll: boolean = true;
   @ViewChild('carousel', { static: true })
   carousel!: ElementRef<HTMLDivElement>; // Use ElementRef for type safety
 
+  @ViewChild('next', { static: true })
+  nextButton!: ElementRef<HTMLDivElement>;
   ngAfterViewInit() {
-    this.totalSlides = this.carousel.nativeElement.children.length
+    this.totalSlides = this.carousel.nativeElement.children.length;
   }
   scrollCarousel(direction: number): void {
     this.currentIndex =
@@ -34,10 +36,21 @@ export class CarouselComponent implements AfterViewInit {
     this.carousel.nativeElement.style.transform = `translateX(-${
       this.currentIndex * 100
     }%)`;
-
   }
 
   autoScrollImages() {
-    this.scrollCarousel(-1);
+    this.currentIndex += 1;
+    if (this.currentIndex >= this.totalSlides) {
+      this.currentIndex = 0;
+    }
+
+    // Optionally toggle visibility here
+    const button = this.nextButton.nativeElement;
+    button.classList.toggle('hidden-button'); // Hide or show the button
+
+    // Click the button programmatically
+    button.click();
+
+    console.log('current index', this.currentIndex);
   }
 }

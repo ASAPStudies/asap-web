@@ -2,14 +2,14 @@
   class="relative flex w-full p-2 flex-wrap items-center justify-between bg-white"
   data-twe-navbar-ref
 >
-  <div class="flex w-full flex-wrap items-center justify-between px-3">
+  <div class="flex w-full flex-wrap items-center  px-3">
     <button
       (click)="openSideBar()"
       class="block border-0 focus:ring-0 dark:text-neutral-200 lg:hidden"
     >
       <!-- Hamburger icon -->
       <span
-        class="[&>svg]:w-7 [&>svg]:stroke-gray-700 dark:[&>svg]:stroke-gray-800"
+        class="[&>svg]:w-7 [&>svg]:stroke-black text-black"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -24,12 +24,12 @@
         </svg>
       </span>
     </button>
-    <div class="w-48 ms-14">
+    <div class="w-48 ms-14 flex justify-center ">
       <a
         class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0"
         [routerLink]="['/', 'home']"
       >
-        <img height="150" width="200" class="w-52 h-12" ngSrc="/logo.png" loading="lazy" />
+        <img height="150" width="200" class="md:w-52 md:h-12 w-[140px] h-[40px]  " ngSrc="/logo.png" loading="lazy" />
       </a>
     </div>
 

@@ -1,24 +1,55 @@
 <div class="relative w-full max-w-4xl mx-auto">
   <!-- Carousel wrapper -->
-  <div class="overflow-hidden relative rounded-lg">
-    <div
-      class="flex transition-transform duration-500 ease-in-out transform"
-      #carousel
-    >
-      @for (image of imagesList; track $index) {
-      <div class="min-w-full">
+  <div
+    id="default-carousel"
+    class="relative md:mb-20 rounded-lg overflow-hidden"
+    data-carousel="static"
+  >
+    <!-- Carousel wrapper -->
+    <div #carousel class="relative h-80 md:h-96" data-carousel-inner>
+      <!-- Item 1 -->
+      @for (item of imagesList; track $index) {
+
+      <div
+        class="hidden duration-700 w-[630px] md:w-[1200px] md:h-[604px] ease-in-out"
+        data-carousel-item
+      >
         <img
-          ngSrc="{{ image }}"
-          alt="Slide {{ $index }}"
-          width="800"
-          height="800"
-          class="w-full h-full relative md:bottom-16"
+          src="{{ item }}"
+          class="object-cover md:object-fill  relative md:bottom-40 w-full h-full md:right-40 right-32"
+          alt="Slide 1"
+          width="1440"
         />
       </div>
       }
     </div>
-    <div class="md:relative bottom-14">
-  <div class="flex flex-row justify-center items-center space-x-10">
+    <!-- Slider indicators -->
+   
+    <!-- Slider controls -->
+    <button
+      #next
+      type="button"
+      class="absolute opacity-0 top-1/2 left-3 z-40 items-center justify-center w-10 h-10 bg-white rounded-full hover:bg-gray-300 focus:outline-none transition hidden-button"
+      data-carousel-prev
+    >
+      <svg
+        class="w-5 h-5 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M15 19l-7-7 7-7"
+        ></path>
+      </svg>
+    </button>
+
+  </div>
+  <div class="flex translate-y-20 md:translate-y-4 flex-row justify-center pb-12 items-center space-x-10">
     <div
       [ngClass]="{ 'bg-primaryColor': currentIndex === 0 }"
       class="h-1.5 w-1.5 rounded-full bg-cInactive"
@@ -31,8 +62,5 @@
       [ngClass]="{ 'bg-primaryColor': currentIndex === 2 }"
       class="h-1.5 w-1.5 rounded-full bg-cInactive"
     ></div>
-  </div>
-</div>
-
   </div>
 </div>

@@ -1,22 +1,26 @@
-<div class="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+<div class="bg-white px-2 md:px-6 py-24 sm:py-32 lg:px-8">
   <div class="mx-auto max-w-4xl text-center">
     <p
-      class="mt-2 text-balance text-md md:text-[24px] text-primaryColor underline font-semibold"
+      class="mt-2 text-balance text-[19px] md:text-[24px] text-primaryColor underline font-semibold"
     >
       Choose your plan
     </p>
   </div>
-  <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 my-12">
+  <div class="relative z-10 mx-auto max-w-7xl my-12">
     <div
-      class="mx-auto grid max-w-md grid-cols-1 gap-8 lg:max-w-5xl lg:grid-cols-2 lg:gap-8"
+      class="flex flex-col md:flex-row justify-center items-center md:space-x-10 space-y-10 md:space-y-0"
     >
       <app-plan-card
         description="Unlock your full potential with our Free plan on us."
         [items]="freeItems"
         title="Free Version"
       />
-      <app-plan-card [items]="premuimItems"  description="Unlock your full potential with our Premium plan, at just $7 per month!
-      Premium users enjoy:" title="Premium Version" />
+      <app-plan-card
+        [items]="premuimItems"
+        description="Unlock your full potential with our Premium plan, at just $7 per month!
+      Premium users enjoy:"
+        title="Premium Version"
+      />
     </div>
   </div>
 </div>

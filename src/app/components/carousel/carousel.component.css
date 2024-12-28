@@ -1,0 +1,4 @@
+.hidden-button {
+  visibility: hidden; /* Hides the button but keeps it in the layout */
+  /* Alternatively, you can use opacity: 0; pointer-events: auto; */
+}
