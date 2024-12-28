@@ -17,5 +17,5 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ASAP_WEBISTE }}
-          projectId: asap-webiste
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ASAP_WEB_01 }}
+          projectId: asap-web-01
