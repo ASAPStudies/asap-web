@@ -1,5 +1,11 @@
 import { NgClass, NgOptimizedImage } from '@angular/common';
-import { Component, ElementRef, Input, ViewChild, AfterViewInit} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+  AfterViewInit,
+} from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -16,7 +22,11 @@ export class CarouselComponent implements AfterViewInit {
       }, this.scrollDelay);
     }
   }
-  imagesList: string[] = ['caro/s1.png', './caro/s2.png', './caro/s3.png'];
+  imagesList: string[] = [
+    'caro/s1-min.png',
+    './caro/s2-min.png',
+    './caro/s3-min.png',
+  ];
   currentIndex: number = 0;
   totalSlides: number = 0;
   @Input() slides!: string[];
