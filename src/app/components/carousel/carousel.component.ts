@@ -22,7 +22,7 @@ export class CarouselComponent implements AfterViewInit {
       }, this.scrollDelay);
     }
   }
-  imagesList: string[] = ['caro/c1.webp', 'caro/c2.webp', 'caro/c2.webp'];
+  imagesList: string[] = ['caro/c1.webp', 'caro/c2.webp', 'caro/c3.webp'];
   currentIndex: number = 0;
   totalSlides: number = 0;
   @Input() slides!: string[];
