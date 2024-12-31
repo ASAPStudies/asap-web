@@ -36,7 +36,7 @@ export class CarouselComponent implements AfterViewInit {
       }, this.scrollDelay);
     }
   }
-  imagesList: string[] = ['caro/c1.png', 'caro/c2.png', 'caro/c3.png'];
+  imagesList: string[] = ['caro/s1.png', 'caro/c2.png', 'caro/s3.png'];
   currentIndex: number = 0;
   totalSlides: number = 0;
   @Input() slides!: string[];
