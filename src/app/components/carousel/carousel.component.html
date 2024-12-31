@@ -11,7 +11,7 @@
       @for (item of imagesList; track $index) {
 
       <div
-        class="hidden px-2 mt-4 duration-700 w-[630px] md:w-[980px] md:h-[555px] ease-in-out"
+        class="hidden p-4 mt-4 duration-700 w-[630px] md:w-[980px] md:h-[555px] ease-in-out"
         data-carousel-item
       >
         <img
@@ -53,17 +53,20 @@
   <div
     class="flex relative bottom-7 translate-y-9 space-x-3 md:translate-y-4 flex-row justify-center pb-12 items-center md:space-x-10"
   >
-    <div
+    <button
+    (click)="switch(0)"
       [ngClass]="{ 'bg-primaryColor': currentIndex === 0 }"
       class="h-1.5 w-1.5 rounded-full bg-cInactive"
-    ></div>
-    <div
+    ></button>
+    <button
+    (click)="switch(1)"
       [ngClass]="{ 'bg-primaryColor': currentIndex === 1 }"
       class="h-1.5 w-1.5 rounded-full bg-cInactive"
-    ></div>
-    <div
+    ></button>
+    <button
+      (click)="switch(32)"
       [ngClass]="{ 'bg-primaryColor': currentIndex === 2 }"
       class="h-1.5 w-1.5 rounded-full bg-cInactive"
-    ></div>
+    ></button>
   </div>
 </div>

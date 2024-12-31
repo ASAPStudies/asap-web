@@ -8,6 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { CarouselComponent } from '../../components/carousel/carousel.component';
 import { Meta, Title } from '@angular/platform-browser';
 import { NgOptimizedImage } from '@angular/common';
+import { FadeAnimateHeroComponent } from "../../components/fade-animate-hero/fade-animate-hero.component";
 
 @Component({
   selector: 'app-home',
@@ -20,8 +21,9 @@ import { NgOptimizedImage } from '@angular/common';
     ButtonModule,
     CarouselComponent,
     HowAsapHelpsComponent,
-    NgOptimizedImage
-  ],
+    NgOptimizedImage,
+    FadeAnimateHeroComponent
+],
 })
 export class HomeComponent {
   imagesList: string[] = ['./caro/s1.png', './caro/s2.png', './caro/s2.png'];

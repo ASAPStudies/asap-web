@@ -1,3 +1,10 @@
+import {
+  state,
+  trigger,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 import { NgClass, NgOptimizedImage } from '@angular/common';
 import {
   Component,
@@ -12,7 +19,14 @@ import {
   standalone: true,
   imports: [NgClass, NgOptimizedImage],
   templateUrl: './carousel.component.html',
-  styleUrl: './carousel.component.css',
+  styleUrls: ['./carousel.component.css'],
+  animations: [
+    trigger('fade', [
+      state('visible', style({ opacity: 1 })),
+      state('hidden', style({ opacity: 0 })),
+      transition('visible <=> hidden', animate('6s ease-in-out')),
+    ]),
+  ],
 })
 export class CarouselComponent implements AfterViewInit {
   constructor() {
@@ -22,15 +36,14 @@ export class CarouselComponent implements AfterViewInit {
       }, this.scrollDelay);
     }
   }
-  imagesList: string[] = ['caro/c1.webp', 'caro/c2.webp', 'caro/c3.webp'];
+  imagesList: string[] = ['caro/c1.png', 'caro/c2.png', 'caro/c3.png'];
   currentIndex: number = 0;
   totalSlides: number = 0;
   @Input() slides!: string[];
   @Input() scrollDelay: number = 7000;
   @Input() autoScroll: boolean = true;
   @ViewChild('carousel', { static: true })
-  carousel!: ElementRef<HTMLDivElement>; // Use ElementRef for type safety
-
+  carousel!: ElementRef<HTMLDivElement>; 
   @ViewChild('next', { static: true })
   nextButton!: ElementRef<HTMLDivElement>;
   ngAfterViewInit() {
@@ -50,13 +63,16 @@ export class CarouselComponent implements AfterViewInit {
       this.currentIndex = 0;
     }
 
-    // Optionally toggle visibility here
     const button = this.nextButton.nativeElement;
-    button.classList.toggle('hidden-button'); // Hide or show the button
-
-    // Click the button programmatically
     button.click();
 
     console.log('current index', this.currentIndex);
+  }
+
+  switch(num: number) {
+    this.currentIndex = num;
+    const button = this.nextButton.nativeElement;
+    button.classList.toggle('hidden-button');
+    button.click();
   }
 }

@@ -1,0 +1,14 @@
+<div
+  [@fade]="isImageVisible ? 'visible' : 'hidden'"
+  class="flex justify-center items-center h-full w-full"
+>
+  <img
+    [ngSrc]="currentImage"
+    class="object-cover md:object-fill w-[950px] relative bottom-4"
+    alt="Slide 1"
+    width="1440"
+    height="555"
+    loading="lazy"
+  />
+ 
+</div>
